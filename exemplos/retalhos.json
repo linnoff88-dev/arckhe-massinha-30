@@ -1,0 +1,11 @@
+{
+  "titulo": "O ladrão de retalhos",
+  "cenas": [
+    {"texto": "Toda manhã, Lia encontrava menos retalhos na sua caixa de costura.", "visual": "Lia observa uma caixa azul quase vazia na mesa de costura, junto à janela de madeira.", "movimento": "Lia abre a caixa e ergue um retalho, confusa."},
+    {"texto": "Hoje, viu um passarinho levando o último pedaço vermelho.", "visual": "Passarinho castanho de peito creme segura um retalho vermelho no bico, na borda da caixa.", "movimento": "O passarinho pega o retalho vermelho e voa em direção à janela."},
+    {"texto": "Seguiu o ladrão até a janela, pronta para reclamar.", "visual": "Lia junto à janela, expressão de surpresa contrariada; árvore do lado de fora.", "movimento": "Lia se aproxima da janela e olha para o galho."},
+    {"texto": "No galho, dois filhotes tremiam dentro de um ninho molhado.", "visual": "Dois filhotes pequenos num ninho com gotas, em um galho perto da janela.", "movimento": "Os dois filhotes se aconchegam, tremendo suavemente."},
+    {"texto": "O passarinho ajeitou o tecido sobre eles.", "visual": "Passarinho adulto junto aos dois filhotes, com o retalho vermelho sobre a borda do ninho.", "movimento": "O pássaro puxa delicadamente o tecido vermelho sobre os dois filhotes."},
+    {"texto": "Lia voltou à mesa, cortou uma manta pequena e deixou a janela aberta.", "visual": "Lia sorri na mesa com uma pequena manta de retalhos pronta; janela aberta ao fundo.", "movimento": "Lia coloca a pequena manta no parapeito e se afasta sorrindo."}
+  ]
+}

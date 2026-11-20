@@ -1,0 +1,117 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Massinha 30 — your idea becomes a moving story</title><meta name="description" content="Create 30-second claymation stories with Kling and ElevenLabs. A skill, script, continuity, captions, and reproducible editing.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/massinha-30/guia/"><link rel="alternate" hreflang="en" href="https://inematds.github.io/massinha-30/guia/en/"><link rel="alternate" hreflang="es" href="https://inematds.github.io/massinha-30/guia/es/">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"><style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;height:auto;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style></head><body><nav><div class="wrap"><a class="brand" href="#top">🎞️ Massinha 30</a><span class="clubpro"><a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a><span class="sep">·</span><a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a></span><div class="links"><a class="sec" href="#historia">The story</a><a class="sec" href="#tecnico">Toolkit (technical)</a><span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span><button class="tgl" id="themeToggle" aria-label="Toggle theme">🌙</button><a class="btn" href="https://github.com/inematds/massinha-30">GitHub</a></div></div></nav>
+<header class="hero" id="top"><div class="glow"></div><div class="wrap"><div><span class="chip">Short stories · claymation</span><h1>Your idea deserves to move people. Bring it to life with <span class="amb">Massinha 30.</span></h1><p class="lead">Do you want to tell a story, but waste time trying to make the characters, scenes, and voice fit together? Massinha 30 is the reusable kit that helps creators turn an idea into a 30-second claymation film.</p><div class="cta"><a class="btn" href="#video">Watch the story</a><a class="btn ghost" href="#guia">Use the toolkit</a></div></div><figure><img src="../assets/banner-en.jpg" alt="Massinha 30: a seamstress and a bird in a handcrafted setting"></figure></div></header>
+<section id="resumo" class="resumo"><div class="wrap"><span class="chip">In brief</span><p>You have a story idea, but getting the characters, voice, and scenes to work together takes effort. Massinha 30 is a toolkit for creating short narratives with a handcrafted clay look. It organizes the approved script, character references, clips generated with Kling, ElevenLabs narration, and captions. It is for creators who want to repeat the process with new stories. Production requires access to the generation services; the guide is free to read.</p><figure style="margin:24px 0 0"><img src="../assets/banner-grade-en.jpg" alt="Story, characters, scenes, movement, voice, and captions" style="width:100%;border-radius:14px" loading="lazy"></figure></div></section>
+<section id="video"><div class="wrap"><span class="chip">Video</span><h2>The Scrap Thief — a clay story in 30 seconds</h2><p class="sub">Demonstration produced with Codex reference images, six Kling clips, and ElevenLabs narration. Captions and scene changes follow the voice’s actual timing. Audio in Portuguese; textual translation of the guide in English and Spanish.</p><video controls playsinline preload="metadata" poster="../assets/demo-poster.jpg" style="display:block;width:100%;max-width:440px;max-height:78vh;margin:24px auto;background:var(--bg);border-radius:14px" src="https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4"></video><p><a class="btn" href="https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4">Download MP4</a> · <a href="https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos-limpo.mp4">Version without captions</a> · <a href="https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/massinha-30-editavel.zip">Download editable project</a></p><p><a href="https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/fontes-audio.md">Audio credits</a>: “Carefree” — Kevin MacLeod (incompetech.com), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. “Réveil des oiseaux” — Joseph Sardin / BigSoundBank, CC0.</p></div></section>
+<section id="historia"><div class="wrap"><span class="chip">Why it works</span><h2>The surprise changes the meaning of what you saw.</h2><p class="sub">First, we show something concrete. Then, the character misunderstands it. The reveal changes their reaction — with no need to end on a moral lesson.</p><div class="grid g3"><article class="card"><div class="num">1</div><h3>Something disappears</h3><p>Lia notices that her fabric scraps are going missing. A small, visible problem that is easy to follow.</p></article><article class="card"><div class="num">2</div><h3>A culprit appears</h3><p>A little bird carries off the fabric. Lia is about to complain. The action moves the story forward.</p></article><article class="card"><div class="num">3</div><h3>The meaning changes</h3><p>The fabric is keeping chicks warm in a wet nest. Lia decides to help. The ending comes in a single gesture.</p></article></div><p>This is the proposed script for <strong>The Scrap Thief</strong>, an original story. Production begins only after the spoken words are approved.</p></div></section>
+<section id="metodo"><div class="wrap"><span class="chip">Action plan</span><h2>Decide on the story before spending on generations.</h2><div class="flow"><span>Script</span>→<span>Approval</span>→<span>Characters</span>→<span>Scenes</span>→<span>Voice</span>→<span>Editing</span></div><p>A character sheet fixes the characters’ appearance. Each individual image becomes a short clip. The narration is created separately, and the captions follow the voice’s actual timing. The characters act silently: this workflow does not include lip sync.</p><div class="grid g2"><div class="card"><h3>What the toolkit automates</h3><p>Approval records, sending a scene to Kling, voice with character-level timing, captions, editing, and technical checks.</p></div><div class="card"><h3>What the creator checks</h3><p>The story, images generated with the agent, continuity, clip downloads, sound sources, pronunciation, and the complete result with audio.</p></div></div></div></section>
+<div id="tecnico" style="padding:42px 0;background:var(--bg2);border-top:2px solid var(--amb)"><div class="wrap"><span class="chip">Technical section</span><h2>The toolkit: for anyone who wants to produce the next story.</h2><p>You do not need this section to understand what came before.</p></div></div><div class="techzone" style="background:var(--bg2)">
+<section id="pre"><div class="wrap"><span class="chip">Prerequisites</span><h2>Your computer assembles; the services generate.</h2><p>A skill is a folder of instructions that the agent follows. CLI means a program used in the terminal. FFmpeg handles editing; libass is the component that renders subtitles.</p><p>On Ubuntu/Debian, install the programs below. On Windows/macOS, install Python 3, Git, Node.js LTS, and FFmpeg from their official websites; the following commands assume these programs are available in a terminal.</p><pre>sudo apt update
+sudo apt install python3 ffmpeg git nodejs npm
+npm install -g @openai/codex @klingai/cli-global
+codex login
+kling login
+ffmpeg -filters | grep subtitles</pre><p>The last command must show the subtitles filter. If it does not, install an FFmpeg distribution with libass. Codex login must use your subscription. Kling login opens account authorization. The kit does not provide generation credits.</p><p>Python 3.10 or later; FFmpeg and ffprobe with libass subtitle support; the official Kling CLI authenticated with credits; an enabled voice and an ElevenLabs key in a private file. Images are created with image_gen through the agent's subscription. There is no video model to install on the server.</p><pre>python3 --version
+ffmpeg -version
+ffprobe -version
+kling who_am_i</pre></div></section>
+<section id="guia"><div class="wrap"><span class="chip">User guide</span><h2>One folder for each story.</h2><div class="step"><div class="b">1</div><div><h3>Download and check the kit</h3><pre>git clone https://github.com/inematds/massinha-30.git
+cd massinha-30
+python3 -m unittest discover -s tests -v</pre><p>Open the folder in Codex and ask: “Use skills/massinha-30/SKILL.md to create a new claymation story”. The skill comes with the project; you do not need to change the global skills.</p></div></div>
+<div class="step"><div class="b">2</div><div><h3>Start and approve the script</h3><pre>python3 skills/massinha-30/scripts/pipeline.py iniciar exemplos/retalhos.json --out runs/retalhos</pre><p>Edit the six scenes in the example before starting a different story. The narracao.txt file shows all the text. After an explicit reply approving the words, record the actual response:</p><pre>python3 skills/massinha-30/scripts/pipeline.py aprovar runs/retalhos --evidencia "I approve the script"</pre><p>Do not run approval as a simple part of installation. Changing the script invalidates the approval.</p></div></div>
+<div class="step"><div class="b">3</div><div><h3>Create references and animate in Kling</h3><p>Ask the agent for the character sheets and six individual images. Save 01.png to 06.png in runs/retalhos. Do not use a storyboard grid as the first frame. Test the command below without --enviar; add that option to generate a five-second scene.</p><pre>python3 skills/massinha-30/scripts/pipeline.py kling runs/retalhos --cena 1 --imagem runs/retalhos/01.png</pre><p>Repeat for all six scenes. Open runs/retalhos/kling-01.json and look for generation_id in the stdout response. Check with <code>kling query_tasks</code> followed by that ID. When it finishes, the result includes a video URL in works. Open that URL in a browser, save the video as 01.mp4 in the runs/retalhos folder, and repeat through 06.mp4. On the INEMA machine, downloads use inemavox; on another computer, saving through the browser does not require that tool. Full instructions are in the references/producao.md file inside the skill.</p></div></div>
+<div class="step"><div class="b">4</div><div><h3>Generate voice and subtitles together</h3><p>In your ElevenLabs account, create a key in the developer/API keys area and copy the ID of the chosen voice from the voice library. An environment variable is a private value read by a program. Save these two values in a .env file outside the project folder, one per line: ELEVENLABS_API_KEY= followed by the key and ELEVENLABS_VOICE_ID= followed by the ID; do not publish this file. The command below is a dry run: it makes no external call and uses no credits. Add --env-file with your private file and --enviar to generate.</p><pre>python3 skills/massinha-30/scripts/pipeline.py voz runs/retalhos</pre><p>For a new take when the voice runs long, keep the same approved script and run the voice command with <code>--tomada 2 --velocidade 1.1</code>, along with the send and private-file options. There are up to three takes (1, 2, and 3), each billed by the provider; previous audio files are preserved. Do not change the number to retry a submission whose result is still uncertain: check the account history first. If it still does not fit, start another production with shorter text and get approval for the new words. The voice uses eleven_multilingual_v2; the API returns the timings used for the subtitles. Fish is a possible alternative, but no adapter is implemented in this kit. Agnes also has no adapter in this project.</p></div></div>
+<div class="step"><div class="b">5</div><div><h3>Assemble and check the result</h3><p>With the six clips, narration, and subtitles in the folder, assemble the first cut. To include music and effects downloaded through inemavox, add --musica and --efeitos with their respective paths. Record the source and license in fontes-audio.md.</p><pre>python3 skills/massinha-30/scripts/pipeline.py montar runs/retalhos --ritmo-voz
+python3 skills/massinha-30/scripts/pipeline.py validar runs/retalhos/final.mp4</pre><p>Outputs: limpo.mp4, final.mp4, and legendas.srt. Export at 720×1280, 30 fps, H.264/AAC, and 30 seconds. If the narration exceeds 29.5 seconds, adjust the delivery or approve a shorter version. Watch the entire film with sound: the technical validator does not check continuity or pronunciation.</p></div></div></div></section>
+<section id="estado"><div class="wrap"><span class="chip">v1.1.0</span><h2>Demonstration produced and reviewed.</h2><p>Final 30-second video, 720×1280, 30 fps, and H.264/AAC. The 27.43-second narration was checked against an independent transcript, which matched the approved script. Visual review detected a reversed movement in the nest shot; that clip was corrected before editing. Eight local tests passed. Kling and ElevenLabs were used in the actual production.</p><p>To make scene changes follow the narration, add --ritmo-voz to the editing command. The edicao.json file records the actual duration of each shot.</p></div></section></div>
+<footer><div class="wrap"><span class="pill">Kling</span><span class="pill">ElevenLabs</span><span class="pill">FFmpeg</span><p>Massinha 30 · v1.1.0 · <a href="https://github.com/inematds/massinha-30">Open source</a> · <a href="https://inema.club">INEMA.CLUB</a></p></div></footer>
+<script>(function(){var k='massinha-30-theme',b=document.body,t=document.getElementById('themeToggle');if(localStorage.getItem(k)==='light'){b.classList.add('light');t.textContent='☀️'}t.onclick=function(){var l=b.classList.toggle('light');t.textContent=l?'☀️':'🌙';localStorage.setItem(k,l?'light':'dark')}})();</script></body></html>

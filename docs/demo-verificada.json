@@ -1,0 +1,34 @@
+{
+  "versao": "1.1.0",
+  "video": {
+    "duracao": 30.0,
+    "largura": 720,
+    "altura": 1280,
+    "fps": 30.0,
+    "video": "h264",
+    "audio": "aac",
+    "aprovado_tecnicamente": true
+  },
+  "audio": {
+    "LUFS": "-14.88",
+    "dBTP": "-1.49",
+    "narracao_segundos": 27.428571
+  },
+  "provedores": {
+    "video": "Kling oficial, kling-video-v3_0_turbo",
+    "voz": "ElevenLabs eleven_multilingual_v2",
+    "imagens": "image_gen pela assinatura"
+  },
+  "geracoes_kling": 7,
+  "creditos_kling_medidos": 280,
+  "teste_kit": 8,
+  "revisao_visual": "planos e quadros amostrados; plano5 corrigido para manter tecido sobre filhotes",
+  "conferencia_voz": "transcrição Whisper local coincidiu integralmente com o roteiro aprovado",
+  "metodo_audio": "transcrição independente e medições; não há escuta humana registrada",
+  "hashes": {
+    "final.mp4": "48ce12c7511a9ef9e54d811ea1ec74368dd3f3d7ec0e8077c7ec2e90aa697d5e",
+    "limpo.mp4": "974321554269e2e6245a58911811379d6d14c7b4d8668f059075ee1e49095b59",
+    "narracao.mp3": "d5254b63fa845d730c0925b7493eaf561f92ff32eadc0d52ebed0ac157c8c6b3",
+    "legendas.srt": "4ca7282c06675710a285c7188547ae85d781ee7a0ffa2f33eebdb5217b094c8f"
+  }
+}
