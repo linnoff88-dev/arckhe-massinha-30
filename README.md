@@ -6,7 +6,7 @@
 </div>
 
 
-[![Massinha 30](guia/assets/banner.jpg)](https://inematds.github.io/massinha-30/guia/)
+[![Massinha 30](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/arckhe-/guia/)
 
 **ê°Å¸â¡Â§ê°Å¸â¡Â· [PortuguêÂªs](README.md) êÂ· ê°Å¸â¡Âºê°Å¸â¡Â¸ [English](README.en.md) êÂ· ê°Å¸â¡Âªê°Å¸â¡Â¸ [EspaêÂ±ol](README.es.md)**
 
@@ -16,14 +16,14 @@ VocêÂª tem uma ideia de histêÂ³ria, mas fazer os personagens, a voz e 
 
 ## Guia de uso
 
-https://inematds.github.io/massinha-30/guia/
+https://linnoff88-dev.github.io/arckhe-/guia/
 
 Abra o projeto no Codex e peêÂ§a: ê¢â¬ÅUse skills/massinha-30/SKILL.md para criar uma nova histêÂ³ria de massinhaê¢â¬Â. Leia [o fluxo completo](skills/massinha-30/references/producao.md).
 
 Python 3.10+, FFmpeg/ffprobe com libass, CLI Kling oficial autenticada e ElevenLabs configurado. As imagens sêÂ£o geradas pelo agente com image_gen pela assinatura. A instalaêÂ§êÂ£o nêÂ£o gera vêÂ­deo nem faz chamada paga.
 
 ```bash
-git clone https://github.com/inematds/massinha-30.git
+git clone https://github.com/linnoff88-dev/massinha-30.git
 cd massinha-30
 python3 -m unittest discover -s tests -v
 python3 skills/massinha-30/scripts/pipeline.py iniciar exemplos/retalhos.json --out runs/retalhos
@@ -41,7 +41,7 @@ A montagem exporta limpo.mp4 e final.mp4 (30s, 720êâ1280, 30fps, H.264/A
 
 MIT. NêÂ£o inclui licenêÂ§as de mêÂºsica, fontes, marcas ou condiêÂ§êÂµes dos provedores.
 
-ê°Å¸Å½Â¬ [Assistir êÂ  histêÂ³ria](https://inematds.github.io/massinha-30/guia/#video) êÂ· [MP4](https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4)
+ê°Å¸Å½Â¬ [Assistir êÂ  histêÂ³ria](https://linnoff88-dev.github.io/arckhe-/guia/#video) êÂ· [MP4](https://github.com/linnoff88-dev/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4)
 
 ---
 

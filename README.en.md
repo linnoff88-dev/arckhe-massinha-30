@@ -1,6 +1,6 @@
 # Massinha 30
 
-[![Massinha 30](guia/assets/banner-en.jpg)](https://inematds.github.io/massinha-30/guia/en/)
+[![Massinha 30](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/arckhe-/guia/en/)
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -10,14 +10,14 @@ You have a story idea, but getting the characters, voice, and scenes to work tog
 
 ## User guide
 
-https://inematds.github.io/massinha-30/guia/en/
+https://linnoff88-dev.github.io/arckhe-/guia/en/
 
 Open the project in Codex and ask: “Use skills/massinha-30/SKILL.md to create a new claymation story.” Read [the complete workflow](skills/massinha-30/references/producao.md).
 
 Python 3.10+, FFmpeg/ffprobe with libass, the official authenticated Kling CLI, and ElevenLabs configured. The agent generates images with image_gen through its subscription. Installation does not generate video or make paid calls.
 
 ```bash
-git clone https://github.com/inematds/massinha-30.git
+git clone https://github.com/linnoff88-dev/massinha-30.git
 cd massinha-30
 python3 -m unittest discover -s tests -v
 python3 skills/massinha-30/scripts/pipeline.py iniciar exemplos/retalhos.json --out runs/retalhos
@@ -34,4 +34,4 @@ Editing exports limpo.mp4 and final.mp4 (30s, 720×1280, 30fps, H.264/AAC), alon
 ## License
 
 MIT. Does not include music, font, or brand licenses, or provider terms.
-🎬 [Watch the story](https://inematds.github.io/massinha-30/guia/en/#video) · [MP4](https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4)
+🎬 [Watch the story](https://linnoff88-dev.github.io/arckhe-/guia/en/#video) · [MP4](https://github.com/linnoff88-dev/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4)

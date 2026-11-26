@@ -23,7 +23,7 @@ python3 skills/massinha-30/scripts/pipeline.py kling /caminho/retalhos --cena 1 
 kling query_tasks ID_DO_RECIBO
 ```
 
-Repita para as seis cenas. O script usa `kling-video-v3_0_turbo`, 720p, 5s. Downloads: abra a URL works[].url do resultado de query_tasks no navegador e salve o vídeo (na máquina INEMA, use inemavox); nomeie `01.mp4` a `06.mp4`. Salve todos os IDs. Um timeout na submissêo pode ter cobrado: nêo reenvie até conferir o histórico. O recibo existente bloqueia novo envio automático.
+Repita para as seis cenas. O script usa `kling-video-v3_0_turbo`, 720p, 5s. Downloads: abra a URL works[].url do resultado de query_tasks no navegador e salve o vídeo (na máquina ARCKHÉ, use ARCKHÉvox); nomeie `01.mp4` a `06.mp4`. Salve todos os IDs. Um timeout na submissêo pode ter cobrado: nêo reenvie até conferir o histórico. O recibo existente bloqueia novo envio automático.
 
 ## Voz, legenda e montagem
 

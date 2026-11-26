@@ -1,6 +1,6 @@
 # Massinha 30
 
-[![Massinha 30](guia/assets/banner-es.jpg)](https://inematds.github.io/massinha-30/guia/es/)
+[![Massinha 30](guia/assets/banner-es.jpg)](https://linnoff88-dev.github.io/arckhe-/guia/es/)
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
@@ -10,14 +10,14 @@ Tienes una idea para una historia, pero lograr que los personajes, la voz y las 
 
 ## Guía de uso
 
-https://inematds.github.io/massinha-30/guia/es/
+https://linnoff88-dev.github.io/arckhe-/guia/es/
 
 Abre el proyecto en Codex y pide: “Usa skills/massinha-30/SKILL.md para crear una nueva historia de plastilina”. Lee [el flujo completo](skills/massinha-30/references/producao.md).
 
 Python 3.10+, FFmpeg/ffprobe con libass, CLI oficial de Kling autenticada y ElevenLabs configurado. El agente genera las imágenes con image_gen mediante su suscripción. La instalación no genera videos ni hace llamadas de pago.
 
 ```bash
-git clone https://github.com/inematds/massinha-30.git
+git clone https://github.com/linnoff88-dev/massinha-30.git
 cd massinha-30
 python3 -m unittest discover -s tests -v
 python3 skills/massinha-30/scripts/pipeline.py iniciar exemplos/retalhos.json --out runs/retalhos
@@ -34,4 +34,4 @@ El montaje exporta limpo.mp4 y final.mp4 (30 s, 720×1280, 30 fps, H.264/AAC), a
 ## Licencia
 
 MIT. No incluye licencias de música, fuentes, marcas ni las condiciones de los proveedores.
-🎬 [Ver la historia](https://inematds.github.io/massinha-30/guia/es/#video) · [MP4](https://github.com/inematds/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4)
+🎬 [Ver la historia](https://linnoff88-dev.github.io/arckhe-/guia/es/#video) · [MP4](https://github.com/linnoff88-dev/massinha-30/releases/download/demo-v1.1.0/massinha-30-retalhos.mp4)
