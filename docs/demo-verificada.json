@@ -23,8 +23,8 @@
   "creditos_kling_medidos": 280,
   "teste_kit": 8,
   "revisao_visual": "planos e quadros amostrados; plano5 corrigido para manter tecido sobre filhotes",
-  "conferencia_voz": "transcrição Whisper local coincidiu integralmente com o roteiro aprovado",
-  "metodo_audio": "transcrição independente e medições; não há escuta humana registrada",
+  "conferencia_voz": "transcriçêo Whisper local coincidiu integralmente com o roteiro aprovado",
+  "metodo_audio": "transcriçêo independente e medições; nêo há escuta humana registrada",
   "hashes": {
     "final.mp4": "48ce12c7511a9ef9e54d811ea1ec74368dd3f3d7ec0e8077c7ec2e90aa697d5e",
     "limpo.mp4": "974321554269e2e6245a58911811379d6d14c7b4d8668f059075ee1e49095b59",

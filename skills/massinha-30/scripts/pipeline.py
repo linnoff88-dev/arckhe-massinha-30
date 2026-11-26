@@ -29,7 +29,7 @@ def load_run(folder, approved=True):
     run = json.loads((folder / 'run.json').read_text())
     story = json.loads((folder / 'roteiro.json').read_text())
     if approved and run.get('aprovacao', {}).get('sha256') != digest(story):
-        raise ValueError('Roteiro sem aprovação válida: obtenha resposta explícita antes de gerar.')
+        raise ValueError('Roteiro sem aprovaçêo válida: obtenha resposta explícita antes de gerar.')
     return folder, run, story
 
 
@@ -49,7 +49,7 @@ def scene_durations(story, alignment):
     for i, scene in enumerate(story['cenas']):
         at = text.find(scene['texto'], offset)
         if at < 0:
-            raise ValueError('Alinhamento não contém o roteiro integral; confira texto e voz.')
+            raise ValueError('Alinhamento nêo contém o roteiro integral; confira texto e voz.')
         if i:
             starts.append(round(alignment['character_start_times_seconds'][at] * 30))
         offset = at + len(scene['texto'])
@@ -123,7 +123,7 @@ def iniciar(args):
     folder = Path(args.out).resolve()
     folder.mkdir(parents=True, exist_ok=True)
     if (folder / 'run.json').exists():
-        raise ValueError('Produção já existe; retome-a sem sobrescrever.')
+        raise ValueError('Produçêo já existe; retome-a sem sobrescrever.')
     save(folder / 'roteiro.json', story)
     save(folder / 'run.json', {'versao': '1.1.0', 'etapa': 'aguardando-aprovacao', 'titulo': story['titulo']})
     (folder / 'narracao.txt').write_text(' '.join(s['texto'] for s in story['cenas']))
@@ -137,7 +137,7 @@ def aprovar(args):
     run['aprovacao'] = {'sha256': digest(story), 'evidencia': args.evidencia}
     run['etapa'] = 'aprovado'
     save(folder / 'run.json', run)
-    print('Aprovação registrada para este roteiro.')
+    print('Aprovaçêo registrada para este roteiro.')
 
 
 def kling(args):
@@ -146,11 +146,11 @@ def kling(args):
         raise ValueError('Cena deve estar entre 1 e 6.')
     image = Path(args.imagem).resolve()
     if not image.is_file():
-        raise ValueError('Imagem não encontrada')
-    prompt = ('Animação artesanal de massinha fosca com marcas sutis de dedos, cenário em miniatura, '
+        raise ValueError('Imagem nêo encontrada')
+    prompt = ('Animaçêo artesanal de massinha fosca com marcas sutis de dedos, cenário em miniatura, '
               'luz quente suave e câmera estável. Preserve identidade e cenário da imagem. '
               + story['cenas'][args.cena - 1]['movimento']
-              + ' Personagens atuam em silêncio. Sem fala, narração, música, textos ou logotipos.')
+              + ' Personagens atuam em silêncio. Sem fala, narraçêo, música, textos ou logotipos.')
     cmd = ['kling', 'image_to_video', '--model', 'kling-video-v3_0_turbo', '--image', str(image),
            '--duration', '5', '--resolution', '720p', prompt]
     if not args.enviar:
@@ -158,7 +158,7 @@ def kling(args):
         return
     receipt = folder / f'kling-{args.cena:02}.json'
     if receipt.exists():
-        raise ValueError('Recibo já existe; confira query_tasks/histórico antes de nova submissão.')
+        raise ValueError('Recibo já existe; confira query_tasks/histórico antes de nova submissêo.')
     save(receipt, {'estado': 'submissao-iniciada', 'cena': args.cena, 'prompt': prompt})
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
     save(receipt, {'returncode': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr, 'prompt': prompt})
@@ -183,7 +183,7 @@ def env_values(path):
 def voz(args):
     folder, run, story = load_run(args.pasta)
     if not 1 <= args.tomada <= 3 or not 0.85 <= args.velocidade <= 1.15:
-        raise ValueError('Use tomada 1–3 e velocidade 0.85–1.15; preserve dicção natural.')
+        raise ValueError('Use tomada 1–3 e velocidade 0.85–1.15; preserve dicçêo natural.')
     text = ' '.join(s['texto'] for s in story['cenas'])
     if not args.enviar:
         print('Ensaio: ElevenLabs eleven_multilingual_v2,', len(text), 'caracteres. Sem chamada externa.')
@@ -210,7 +210,7 @@ def voz(args):
     (folder / 'narracao.mp3').write_bytes(audio)
     alignment = result.get('alignment') or result.get('normalized_alignment')
     if not alignment:
-        raise ValueError('Áudio salvo; resposta não trouxe alinhamento para legendas.')
+        raise ValueError('Áudio salvo; resposta nêo trouxe alinhamento para legendas.')
     save(folder / 'alinhamento.json', alignment)
     save(folder / f'alinhamento-{args.tomada:02}.json', alignment)
     (folder / 'legendas.srt').write_text(captions(alignment))
@@ -218,16 +218,16 @@ def voz(args):
     run['voz'] = {'provedor': 'ElevenLabs', 'duracao': measured, 'roteiro_sha256': digest(story)}
     save(folder / 'run.json', run)
     save(marker, {'estado': 'concluido', 'duracao': measured})
-    print('Voz salva, duração medida:', measured)
+    print('Voz salva, duraçêo medida:', measured)
 
 
 def montar(args):
     folder, run, story = load_run(args.pasta)
     if run.get('voz', {}).get('roteiro_sha256') != digest(story):
-        raise ValueError('Voz não corresponde ao roteiro aprovado.')
+        raise ValueError('Voz nêo corresponde ao roteiro aprovado.')
     voice = folder / 'narracao.mp3'
     if duration(voice) > 29.5:
-        raise ValueError('Voz excede 29,5 s; ajuste a interpretação ou aprove texto mais curto.')
+        raise ValueError('Voz excede 29,5 s; ajuste a interpretaçêo ou aprove texto mais curto.')
     if not (folder / 'legendas.srt').is_file():
         raise ValueError('Faltam legendas alinhadas à voz.')
     lengths = scene_durations(story, json.loads((folder / 'alinhamento.json').read_text())) if args.ritmo_voz else [5.0] * 6
